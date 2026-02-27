@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  ecalendar:
+    build: .
+    ports:
+      - "8210:80"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=America/New_York
+      - SECRET_KEY=change-me
+    restart: unless-stopped
